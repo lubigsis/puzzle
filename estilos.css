@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Verdana, sans-serif;
+}
+
+.contenedor {
+    width: 90%;
+    height: 100vh;
+    padding: 20px;
+    background-color: rgb(253, 197, 177);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+    
+    
+}
+
+.contenedor h1{
+    width: fit-content;
+    display: inline-block;
+    letter-spacing: 3px;
+    color: rgb(254, 5, 5);
+    font-size: 35px;
+    text-align: left;
+    border: 1px solid green;
+}
+
+.contenedor .contenedor-puzzle .piezas {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    margin: auto;
+    justify-content: center;
+    
+}
+
+.contenedor .contenedor-puzzle .puzzle {
+    border: 3px solid orangered;
+    width: 318px;
+    height: 495px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.pieza {
+    width: 106px;
+    height: 165px;
+    background-size: cover;
+    margin: 10px;
+}
+
+.placeholder {
+    background-color: #F2F2F2;
+    outline: 1px solid #333;
+    width: 106px;
+    height: 165px;
+    transition: 1s;
+}
+
+.placeholder.hover {
+    background-color: rgb(255, 140, 0);
+}
+
+.placeholder .pieza {
+    margin: 0;
+}
+
+#mensaje {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    display: none;
+}
+
+.ganaste {
+    background-color: #fff;
+}
+
+.ganaste #mensaje {
+    display: block;
+}
+
+.ganaste .placeholder {
+    outline: none;
+}
+
+.ganaste .piezas {
+    display: none;
+}
+
