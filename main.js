@@ -38,3 +38,39 @@ for (let i = 0; i < terminado; i++) {
     div.dataset.id = i;  //q'guarde internamente una referencia de qué img podría llegar a recibir
     puzzle.appendChild(div);//lo anterior se agrega en el contenedor/variable 'puzzle'.
 }
+
+//------------------------------------DRAG and DROP-------------------------------------------------------
+//transfiero info de la pieza cuando el user empiece a trasladar una pieza
+piezas.addEventListener('dragstart', e => {
+    e.dataTransfer.setData('id', e.target.id);
+});
+
+
+puzzle.addEventListener('dragover', e => {
+    e.preventDefault();
+    e.target.classList.add('hover'); //rta. visual al user cuando esté arrastrando el elemento. REVER, no lo veo pq le puse un image-background al CSS
+});
+
+puzzle.addEventListener('dragleave', e => {
+    e.target.classList.remove('hover');
+});
+
+puzzle.addEventListener('drop', e => {
+    e.target.classList.remove('hover');
+//-------------drop selectivo: no cualquier pieza puede ir en cualquier lugar.
+
+const id = e.dataTransfer.getData('id');
+const numero = id.split('-')[1];
+
+if (e.target.dataset.id === numero) {
+    e.target.appendChild(document.getElementById(id));
+
+    terminado--;
+
+    if (terminado === 0) {
+        document.body.classList.add('ganaste');
+    }
+}
+
+});
+
