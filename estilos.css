@@ -107,6 +107,7 @@ h3{
     margin: 0;
 }
 
+/*----------------------------------------La clase .ganaste se le aplica al body con el JS*/
 #mensajeJS {
     color: yellow;
     font-size: 40px;

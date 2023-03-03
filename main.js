@@ -35,7 +35,7 @@ while (imagenes.length) {
 for (let i = 0; i < terminado; i++) {
     const div = document.createElement('div');
     div.className = 'placeholder'; //clase definida en el CSS
-    div.dataset.id = i;  //q'guarde internamente una referencia de qué img podría llegar a recibir
+    div.dataset.id = i;  //q'guarde internamente una referencia de qué img podría llegar a recibir (guardo el n° de la img q' corresponde)
     puzzle.appendChild(div);//lo anterior se agrega en el contenedor/variable 'puzzle'.
 }
 
@@ -57,7 +57,7 @@ puzzle.addEventListener('dragleave', e => {
 
 puzzle.addEventListener('drop', e => {
     e.target.classList.remove('hover');
-//-------------drop selectivo: no cualquier pieza puede ir en cualquier lugar.
+//-----------------------------------------------'drop selectivo': no cualquier pieza puede ir en cualquier lugar.
 
 const id = e.dataTransfer.getData('id');
 const numero = id.split('-')[1];
